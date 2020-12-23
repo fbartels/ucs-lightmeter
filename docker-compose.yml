@@ -1,0 +1,17 @@
+version: '3.5'
+services:
+  lightmetercontrolcenter:
+    image: lightmeter/controlcenter:${CONTROL_VERSION:-latest}
+    restart: always
+    env_file: ./.env
+    ports:
+      - "8088:8080"
+    volumes:
+      - "/var/log/:/logs:ro"
+      - "/var/lib/lightmeter_workspace/:/workspace"
+    command: -workspace /workspace -watch_dir /logs
+    logging:
+      driver: "json-file"
+      options:
+        max-file: ${DOCKERLOGGING_MAXFILE:-2}
+        max-size: ${DOCKERLOGGING_MAXSIZE:-200k}
