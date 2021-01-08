@@ -1,7 +1,7 @@
 version: '3.5'
 services:
   lightmetercontrolcenter:
-    image: lightmeter/controlcenter:1.1.0
+    image: lightmeter/controlcenter:${CONTROL_VERSION}
     restart: always
     env_file: ./.env
     ports:
