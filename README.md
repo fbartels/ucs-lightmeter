@@ -14,7 +14,7 @@ To update to the latest version simple rerun `./run.sh` which will retrieve the 
 
 ### Getting logs
 
-
+To view logs simply run `docker-compose logs -f`.
 
 ### Further configuration
 
