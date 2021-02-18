@@ -16,6 +16,14 @@ To update to the latest version simple rerun `./run.sh` which will retrieve the 
 
 To view logs simply run `docker-compose logs -f`.
 
+### Password reset
+
+To reset the password of your user run the following command:
+
+```bash
+docker-compose exec lightmetercontrolcenter /lightmeter -workspace /workspace -email_reset 'you@email.com' -password 'new-password'
+```
+
 ### Further configuration
 
 The only configuration option that can be modified at this given time is the version of Lightmeter to run. The value is stored in a file called `.env`. To apply changes from the `.end` file to the container it needs to be restarted with `docker-compose up -d`.
